@@ -37,3 +37,7 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.counter {
+  background-color: aqua;
+}

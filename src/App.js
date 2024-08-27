@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import { AppProfile } from './components/AppProfile';
+import { AppCounter } from './AppCounter';
 
 function App() {
   return (
     <div className="App">
-      <AppProfile/>
+      <AppCounter/>
     </div>
   );
 }
