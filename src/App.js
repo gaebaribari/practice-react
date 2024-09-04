@@ -1,10 +1,10 @@
 import './App.css';
-import AppProducts from './AppProducts';
+import AppXY from './AppXY';
 
 function App() {
   return (
     <div className="App">
-      <AppProducts/>
+      <AppXY/>
     </div>
   );
 }

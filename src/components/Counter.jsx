@@ -5,11 +5,7 @@ export function Counter({ sum, onClick }) {
 
     return (
         <div className="counter">
-            <h1>{num}/{sum}</h1>
-            <button onClick={() => {
-                setAddNum((prev) => prev + 1);
-                onClick();
-            }}>Add</button>
+            <h1>시간</h1>
         </div>
     )
 }

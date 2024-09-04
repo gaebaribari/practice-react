@@ -1,17 +1,21 @@
-import { Counter } from "./components/Counter";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function AppCounter() {
-    const [sum, setSum] = useState(0);
-    const getSum = () => {
-        setSum((prev) => prev + 1);
-    };
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() => {
+        const increaseSeconds = setInterval(() => {
+            setSeconds((prev) => prev + 1);
+        }, 1000);
+
+        return () => clearInterval(increaseSeconds); 
+    }, []);
+
 
     return (
         <>
-            <h1>총 {sum} 입니다  {sum > 10 ? '❤️':'🤍'}</h1>
-            <Counter sum={sum} onClick={getSum}/>
-            <Counter sum={sum} onClick={getSum}/>
+            <h1>{seconds}</h1>
+            <button></button>
         </>
     )
 }
