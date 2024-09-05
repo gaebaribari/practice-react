@@ -21,9 +21,3 @@ export default function AppXY() {
     </div>
   );
 }
-
-
-/*
-그걸 받아와
-setPosition으로 pointer인 애도 그렇게 해  
- */
