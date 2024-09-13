@@ -1,10 +1,10 @@
 import './App.css';
-import AppMentors from './AppMentors';
+import { AppForm } from './AppForm';
 
 function App() {
   return (
     <div className="App">
-      <AppMentors/>
+      <AppForm/>
     </div>
   );
 }
