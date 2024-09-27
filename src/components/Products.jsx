@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../hooks/use-products';
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
   const [checked, setChecked] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
+  console.log(checked);
+  
+  const  [loading, error, products] = useProducts(checked);
   const handleChange = () => setChecked((prev) => !prev);
-
-  const getProductsNetwork = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`data/${checked ? 'sale_' : ''}products.json`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log('🔥뜨끈한 데이터를 네트워크에서 받아옴');
-          setProducts(data);
-        });
-      setLoading(false);
-    } catch (error) {
-      setError(true);
-    }
-  };
-
-  useEffect(() => {
-    getProductsNetwork();
-  }, [checked]);
 
   if (error) return <ErrorPage />
   if (loading) return <Loading />
@@ -41,7 +22,7 @@ export default function Products() {
           </li>
         ))}
       </ul></div>
-      <input id='checkbox' type='checkbox' value={checked} onChange={handleChange} />
+      <input id='checkbox' type='checkbox' checked={checked} onChange={handleChange} />
       <label htmlFor="checkbox">세일 제품 보여주기</label>
     </>
   );
