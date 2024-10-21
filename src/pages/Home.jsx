@@ -16,7 +16,7 @@ const Emoji = styled.p`
 `;
 
 const Box = styled.div`
-    background-color:${(props) => props.bgColor};
+    background-color:${props => props.bgColor};
     width:100px;
     height:100px;
     animation : ${rotaionAnimation} 1s linear infinite;
@@ -45,21 +45,18 @@ color:white;
 `
 
 const Text = styled.span`
-    color:white;    
-`
+    color: ${(props)=>props.theme.textColor};    
+    // color: white;    
+`;
 export default function Home() {
-
     return (
         <>
             <Box bgColor='tomato'>
                 <Text>홈</Text>
             </Box>
             <Circle bgColor='green'>
-            <Emoji>🥰</Emoji>
+                <Emoji>🥰</Emoji>
             </Circle>
             <Btn href='/'>버튼</Btn>
-
         </>)
 }
-
-// 그냥 처음부터 styled.a 하면 안되나 굳이 as a 말고 
